@@ -1,0 +1,28 @@
+##########################################################################
+name: TESTING CI
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches: [ main ]
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    container:
+      image: archlinux
+      options: --privileged
+      volumes:
+        - /sys/fs/cgroup:/sys/fs/cgroup
+
+    steps:
+      - uses: actions/checkout@v2
+##########################################################################
+      - name: Install Base devel
+        run: pacman -Syu base-devel --noconfirm 
+
+      - name: Build Neko-Ice-PM
+        run: makepkg -i

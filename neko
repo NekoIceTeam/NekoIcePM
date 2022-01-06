@@ -1,0 +1,28 @@
+#!/bin/bash
+
+## Configuration
+cache=~/.cache/neko
+
+help
+## Help Command
+help() {
+    echo "usage: neko <operation> [...]"
+    echo "operations:"
+
+    echo "neko {-h, --help}              display help and exit"
+    echo "neko {-v, --version}           print version information and exit"
+    echo
+    echo "Report bugs to <"
+}
+
+
+## Version Command
+version() {
+    echo " _   _      _               Neko v1.0.0"
+    echo "| \ | | ___| | _____        Copyright (C) 2022 NekoIceTeam"
+    echo "|  \| |/ _ \ |/ / _ \       Copyright (C) 2022 NekoIceCream"
+    echo "| |\  |  __/   < (_) |"
+    echo "|_| \_|\___|_|\_\___/       This program may be freely redistributed under"
+    echo "                            the terms of the Massachusetts Institute of Technology License"
+}
+
